@@ -24,7 +24,7 @@ $nomeUsuario = $_SESSION['user_nome'] ?? 'Usuário';
         color: white;
     }
 
-    
+
     .campo-busca {
         background: #1c1f23;
         border: none;
@@ -38,7 +38,7 @@ $nomeUsuario = $_SESSION['user_nome'] ?? 'Usuário';
         color: #aaa;
     }
 
-   
+
     .botao-filtro {
         border: none;
         padding: 6px 14px;
@@ -73,36 +73,47 @@ $nomeUsuario = $_SESSION['user_nome'] ?? 'Usuário';
     .status-concluido {
         background: #5cb85c;
     }
+
+    .fab-btn {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
 </style>
 
 <div class="container mt-5">
 
     <!-- Campo de pesquisa -->
-    <div class="mb-3">
-        <input type="text" class="form-control campo-busca" placeholder="Pesquisar tarefas...">
-    </div>
+    <form method="GET" action="/tarefa/listar" class="mb-3">
+        <input
+            type="text"
+            name="busca"
+            class="form-control campo-busca"
+            placeholder="Pesquisar tarefas..."
+            value="<?= $_GET['busca'] ?? '' ?>">
+    </form>
+
 
     <!-- Filtros -->
     <div class="d-flex gap-2 mb-4">
-        <button class="botao-filtro active">Todas</button>
-        <button class="botao-filtro">Pendentes</button>
-        <button class="botao-filtro">Concluídas</button>
+        <button class="botao-filtro active" data-filtro = "">Todas</button>
+        <button class="botao-filtro" data-filtro = "pendente">Pendentes</button>
+        <button class="botao-filtro" data-filtro = "concluida">Concluídas</button>
     </div>
 
     <!-- Cartão de tarefa -->
-    <div class="cartao-tarefa">
-        <div class="d-flex justify-content-between">
-            <h6 class="text-light mb-1">Review Q3 Marketing Plan</h6>
-            <button class="btn btn-sm text-light">⋮</button>
-        </div>
 
-        <p class="texto-secundario">Check analytics and propose budget updates.</p>
-
-        <div class="d-flex align-items-center gap-2 texto-secundario">
-            📅 Oct 24
-            <span class="status status-pendente">Pendente</span>
-        </div>
+    <!-- Lista -->
+    <div id="lista-tarefas">
+        <?php require APP_PATH . 'views/componentes/listar_tarefas.php'; ?>
     </div>
+
+
+    <div class="d-flex justify-content-end mb-3">
+        <a href="/tarefa/nova" class="btn btn-primary px-4 py-2">
+            ➕ Nova Tarefa
+        </a>
+    </div>
+
+
 
 </div>
 
