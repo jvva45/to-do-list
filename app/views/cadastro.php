@@ -32,7 +32,7 @@ require APP_PATH . 'views/layout/header.php';
         <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
 
         <p class="text-center mt-3">
-            Já tem conta? <a href="/login">Fazer Login</a>
+            Já tem conta? <a href="/login">Fazer Loagin</a>
         </p>
 
     </form>

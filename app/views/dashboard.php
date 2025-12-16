@@ -12,7 +12,7 @@ $nomeUsuario = $_SESSION['user_nome'] ?? 'Usuário';
 
 <style>
     body {
-        background: #0f1214;
+        background:   #0D1117;
         color: #fff;
     }
 
@@ -77,11 +77,19 @@ $nomeUsuario = $_SESSION['user_nome'] ?? 'Usuário';
     .fab-btn {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
+
+    .tarefa-concluida {
+        opacity: 0.6;
+    }
+
+    .tarefa-concluida h6 {
+        text-decoration: line-through;
+    }
 </style>
 
 <div class="container mt-5">
 
-    <!-- Campo de pesquisa -->
+
     <form method="GET" action="/tarefa/listar" class="mb-3">
         <input
             type="text"
@@ -92,23 +100,21 @@ $nomeUsuario = $_SESSION['user_nome'] ?? 'Usuário';
     </form>
 
 
-    <!-- Filtros -->
+
     <div class="d-flex gap-2 mb-4">
-        <button class="botao-filtro active" data-filtro = "">Todas</button>
-        <button class="botao-filtro" data-filtro = "pendente">Pendentes</button>
-        <button class="botao-filtro" data-filtro = "concluida">Concluídas</button>
+
+        <button class="botao-filtro active" data-filtro="pendente">Pendentes</button>
+        <button class="botao-filtro" data-filtro="concluida">Concluídas</button>
+        <button class="botao-filtro " data-filtro="">Todas</button>
     </div>
 
-    <!-- Cartão de tarefa -->
-
-    <!-- Lista -->
     <div id="lista-tarefas">
         <?php require APP_PATH . 'views/componentes/listar_tarefas.php'; ?>
     </div>
 
 
     <div class="d-flex justify-content-end mb-3">
-        <a href="/tarefa/nova" class="btn btn-primary px-4 py-2">
+        <a href="tarefa/nova" class="btn btn-primary px-4 py-2">
             ➕ Nova Tarefa
         </a>
     </div>
