@@ -22,7 +22,6 @@ $router->get('tarefa/listar', ['TarefaController', 'listarAjax']); // ✅ BUSCA 
 $router->get('tarefa/nova', ['TarefaController', 'nova']);
 $router->post('tarefa/salvar', ['TarefaController', 'salvarTarefa']);
 $router->post('tarefa/concluir', ['TarefaController', 'concluirTarefa']);
-
 $router->post('tarefa/excluir', ['TarefaController', 'deletarTarefa']);   
 $router->post('tarefa/atualizar', ['TarefaController', 'atualizarTarefa']);
 $router->get('tarefa/editar', ['TarefaController', 'editar']);

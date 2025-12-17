@@ -11,8 +11,11 @@ $nomeUsuario = $_SESSION['user_nome'] ?? 'Usuário';
 ?>
 
 <style>
+
+
+
     body {
-        background:   #0D1117;
+        background:  var(--cor-fundo-principal);
         color: #fff;
     }
 
