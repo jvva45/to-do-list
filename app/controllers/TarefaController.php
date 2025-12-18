@@ -195,4 +195,23 @@ class TarefaController
         );
         exit();
     }
+
+    public function reabrirTarefa()
+    {
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: /login");
+            exit();
+        }
+        $id = $_POST['id'] ?? null;
+        $usuarioId = $_SESSION['user_id'];
+
+        $reabriu = $this->tarefaModel->reabrirTarefa($id, $usuarioId);
+
+        header(
+            $reabriu
+                ? "Location: /dashboard?sucesso=Tarefa reaberta"
+                : "Location: /dashboard?erro=Erro ao reabrir"
+        );
+        exit();
+    }
 }

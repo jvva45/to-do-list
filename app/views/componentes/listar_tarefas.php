@@ -37,26 +37,24 @@
 
                 <div class="d-flex gap-2 align-items-center">
 
-                    <?php if ($tarefa['status'] === 'pendente'): ?>
-                        <a href="#"
-                            class="btn btn-link p-0 text-success btn-concluir"
-                            data-id="<?= $tarefa['id'] ?>"
-                            title="Concluir Tarefa">
+                    <?php if ($tarefa["status"] === "pendente"): ?>
+                        
+                        <a href="#" class="btn btn-link p-0 btn-concluir" data-id="<?= $tarefa["id"] ?>" title="Concluir Tarefa">
                             <i class="bi bi-check-circle-fill"></i>
+                        </a>
+                        <a href="/tarefa/editar?id=<?= $tarefa["id"] ?>" class="btn btn-link p-0 btn-editar" data-id="<?= $tarefa["id"] ?>" title="Editar Tarefa">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+
+                    <?php else: ?>
+                        
+                        <a href="#" class="btn btn-link p-0 btn-reabrir" data-id="<?= $tarefa["id"] ?>" title="Reabrir Tarefa">
+                            <i class="bi bi-arrow-counterclockwise"></i>
                         </a>
                     <?php endif; ?>
 
-                    <a href="/tarefa/editar?id=<?= $tarefa['id'] ?>"
-                        class="btn btn-link p-0 text-light btn-editar"
-                        data-id="<?= $tarefa['id'] ?>"
-                        title="Editar Tarefa">
-                        <i class="bi bi-pencil"></i>
-                    </a>
-
-                    <a href="#"
-                        class="btn btn-link p-0 text-danger btn-excluir"
-                        data-id="<?= $tarefa['id'] ?>"
-                        title="Excluir Tarefa">
+                    
+                    <a href="#" class="btn btn-link p-0 btn-excluir" data-id="<?= $tarefa["id"] ?>" title="Excluir Tarefa">
                         <i class="bi bi-trash"></i>
                     </a>
 

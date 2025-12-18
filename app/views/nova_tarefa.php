@@ -69,12 +69,12 @@ $nomeUsuario = $_SESSION['user_nome'] ?? 'Usuário';
 
 
 
-            <!-- Voltar -->
+            
             <a href="/dashboard" class="btn btn-outline-light w-100 rounded-3 py-3 mb-2">
                 <i class="bi bi-arrow-left me-2"></i> Voltar
             </a>
 
-            <!-- Criar -->
+            
             <button type="submit" class="btn btn-primary w-100 rounded-3 py-3 mb-3">
                 <i class="bi bi-check-circle me-2"></i> Criar Tarefa
             </button>

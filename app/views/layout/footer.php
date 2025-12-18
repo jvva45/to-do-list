@@ -1,5 +1,5 @@
 <footer class="bg-dark text-white text-center py-3 mt-auto">
-    <p class="mb-0">&copy; <?= date('Y') ?> Sistema de Tarefas</p>
+    <p class="mb-0 text-secondary-custom">&copy; <?= date('Y') ?> Sistema de Tarefas</p>
 </footer>
 
 <!-- Bootstrap JS -->
@@ -117,8 +117,27 @@ carregarTarefas();
 
             
 
+            
 
+        });
 
+        // Lógica para REABRIR TAREFA
+        $(document).on('click', '.btn-reabrir', function(e) {
+            e.preventDefault();
+
+            const btn = $(this);
+            const id = btn.data('id');
+
+            $.ajax({
+                url: '/tarefa/reabrir', // Assumindo que você tem uma rota /tarefa/reabrir
+                data: {
+                    id: id
+                },
+                type: 'POST',
+                success: function() {
+                    carregarTarefas();
+                }
+            });
         });
 
     });

@@ -87,4 +87,10 @@ class TarefaModel
 
         return mysqli_query($this->db, $sql);
     }
+
+    public function reabrirTarefa($tarefaId, $usuarioId)
+    {
+        $sql = "UPDATE tarefas SET status = 'pendente' WHERE id = $tarefaId AND usuario_id = $usuarioId";
+        return mysqli_query($this->db, $sql);
+    }
 }
