@@ -29,13 +29,3 @@ O objetivo do projeto é demonstrar domínio técnico em PHP puro, MySQL, Bootst
 - Git
 
 > Nenhum framework PHP foi utilizado, conforme exigido no desafio.
-
----
-
-## 🚀 Como Executar o Projeto Localmente
-
-### 1️⃣ Clonar o repositório
-
-```bash
-git clone https://github.com/jvva45/to-do-list.git
-cd to-do-list

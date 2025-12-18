@@ -1,12 +1,10 @@
-CREATE DATABASE IF NOT EXISTS desafio_webbrain
+CREATE DATABASE IF NOT EXISTS lista_tarefas
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_general_ci;
 
-USE desafio_webbrain;
+USE lista_tarefas;
 
--- ========================
--- TABELA DE USUÁRIOS
--- ========================
+
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -24,7 +22,6 @@ CREATE TABLE IF NOT EXISTS tarefas (
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_limite DATE,
     atualizado_em TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-    deletado_em TIMESTAMP NULL DEFAULT NULL,
 
     CONSTRAINT fk_tarefa_usuario
         FOREIGN KEY (usuario_id)
